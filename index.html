@@ -5,8 +5,7 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-        <script>
-            /*
+        <script>          
             AFRAME.registerComponent('videohandler', {
                 init: function () {
                     var marker = this.el;
@@ -22,31 +21,7 @@
                         this.vid.pause();
                     }.bind(this));
                 },
-            });*/
-            AFRAME.registerComponent('vidhandler', {
-    init: function() {
-        this.toggle = false;
-        this.vidNodes = document.querySelectorAll("#vid, #videonew");
-        for (let i = 0; i < this.vidNodes.length; i++) {
-              this.vidNodes[i].pause();
-        }
-    },
-    tick: function() {
-        if (this.el.object3D.visible == true) {
-            if (!this.toggle) {
-                this.toggle = true;
-                for (let i = 0; i < this.vidNodes.length; i++) {
-                  this.vidNodes[i].play();
-                }
-            }
-        } else {
-            this.toggle = false;
-            for (let i = 0; i < this.vidNodes.length; i++) {
-              this.vidNodes[i].pause();
-            }
-        }
-    }
-});
+            });           
         </script>
     </head>
 

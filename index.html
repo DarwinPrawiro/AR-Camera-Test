@@ -21,7 +21,7 @@
                         this.vid.pause();
                     }.bind(this));
                 },
-            });           
+            });
         </script>
     </head>
 
@@ -112,6 +112,11 @@
 
             <a-entity camera></a-entity>
         </a-scene>    
+        <script>
+        window.addEventListener('click', function () { 
+   document.querySelector('#video').play();
+ });
+        </script>
         
     </body>
 </html>

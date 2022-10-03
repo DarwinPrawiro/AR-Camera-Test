@@ -35,7 +35,32 @@
             embedded
             gesture-detector
         >
-            
+            <a-assets>
+                <video
+                    id="vid"
+                    src="assets/asset.mp4"
+                    preload="auto"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+                <video
+                    id="lucy"
+                    src="assets/LucyEdgerunnersRaw.mp4"
+                    preload="auto"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+            </a-assets>          
 
             <a-marker
                 type="pattern"
@@ -52,10 +77,10 @@
                 id="markerA"
             >
                 <a-video
-                    src="assets/asset.mp4"
+                    src="#vid"
                     scale="5 2.5 10"
                     position="0 -5 0"
-                    rotation="-90 0 0" autoplay="true" loop="true"
+                    rotation="-90 0 0"
                     class="clickable"             
                     gesture-handler                           
                 ></a-video>
@@ -76,10 +101,10 @@
                 id="markerA"
             >
                 <a-video
-                    src="assets/LucyEdgerunnersRaw.mp4"
+                    src="#lucy"
                     scale="5 2.5 10"
                     position="0 -5 0"
-                    rotation="-90 0 0" autoplay="true" loop="true"
+                    rotation="-90 0 0"
                     class="clickable"
                     gesture-handler    
                 ></a-video>

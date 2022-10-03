@@ -6,6 +6,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script>
+            /*
             AFRAME.registerComponent('videohandler', {
                 init: function () {
                     var marker = this.el;
@@ -21,7 +22,31 @@
                         this.vid.pause();
                     }.bind(this));
                 },
-            });
+            });*/
+            AFRAME.registerComponent('vidhandler', {
+    init: function() {
+        this.toggle = false;
+        this.vidNodes = document.querySelectorAll("#vid, #videonew");
+        for (let i = 0; i < this.vidNodes.length; i++) {
+              this.vidNodes[i].pause();
+        }
+    },
+    tick: function() {
+        if (this.el.object3D.visible == true) {
+            if (!this.toggle) {
+                this.toggle = true;
+                for (let i = 0; i < this.vidNodes.length; i++) {
+                  this.vidNodes[i].play();
+                }
+            }
+        } else {
+            this.toggle = false;
+            for (let i = 0; i < this.vidNodes.length; i++) {
+              this.vidNodes[i].pause();
+            }
+        }
+    }
+});
         </script>
     </head>
 
@@ -111,32 +136,7 @@
             </a-marker>
 
             <a-entity camera></a-entity>
-        </a-scene>
-        
-        <script>
-        AFRAME.registerComponent('vidHandler', {
-  // define a variable in which we will keep the video element
-  schema: {
-     video: {type: 'selector'},
-  },
-  init: function() {
-     // use the video from the schema
-     this.video = this.data.video
-     this.video.pause()
-  },
-  tick: function() {
-    if (this.el.object3D.visible == true) {
-      if (!this.toggle) {
-        this.toggle = true;
-        this.video.play()
-      }
-     } else {
-      this.toggle = false;
-      this.video.pause()
-    }
-  }
-})
-        </script>
+        </a-scene>    
         
     </body>
 </html>

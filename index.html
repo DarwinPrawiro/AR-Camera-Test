@@ -78,7 +78,7 @@
             >
                 <a-video
                     src="#vid"
-                    scale="8.5 12.5 10"
+                    scale="2 1 10"
                     position="0 -5 0"
                     rotation="-90 0 0"
                     class="clickable"             
@@ -113,6 +113,7 @@
             <a-entity camera></a-entity>
         </a-scene>    
         <script>
+            //force play all video by tapping the screen
         window.addEventListener('click', function () { 
    document.querySelector('#vid').play();
             document.querySelector('#lucy').play();

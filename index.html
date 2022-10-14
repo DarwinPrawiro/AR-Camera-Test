@@ -52,7 +52,9 @@
                     playsinline
                 ></video>
                 
-            </a-assets>          
+            </a-assets>   
+            
+            <!--AR Js-->
 
             <a-marker
                 type="pattern"
@@ -78,10 +80,38 @@
                 ></a-video>
             </a-marker>
             
+            <!--Scan AR -->
+            
             <a-marker
                 type="pattern"
                 preset="custom"
                 url="assets/ScanAR.patt"
+                videohandler
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance="0.01"
+                smoothThreshold="5"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-video
+                    src="#vid"
+                    scale="4.5 6 5"
+                    position="-3 -5 0"
+                    rotation="-90 0 0"
+                    class="clickable"             
+                    gesture-handler                           
+                ></a-video>
+            </a-marker>
+            
+            <!--Scan AR Thin Border-->
+            
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/ScanARThinBorder.patt"
                 videohandler
                 smooth="true"
                 smoothCount="10"
